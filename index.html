@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Boxicons cdn -->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="overlay absolute top-0 left-0 bg-black w-full h-full opacity-50 hidden">
+
+  </div>
+  <header>
+    <section class="top-header bg-lime-600 flex justify-center py-1">
+      <i class='bx bxl-facebook text-white text-xl mr-1'></i>
+      <i class='bx bxl-twitter text-white text-xl mr-1'></i>
+      <i class='bx bxl-instagram text-white text-xl mr-1'></i>
+      <i class='bx bxl-youtube text-white text-xl mr-1'></i>
+      <i class='bx bxl-pinterest-alt text-white text-xl mr-1'></i>
+    </section>
+    <section class="flex justify-between items-center px-2 py-4 bg-white">
+      <i class='bx bx-menu text-2xl cursor-pointer' onclick="showSidebar()"></i>
+      <a href="#"><img src="img/wood-logo-dark.svg" alt="logo" class="w-44"></a>
+      <i class='bx bx-cart-alt text-2xl cursor-pointer'></i>
+      <nav class="side-bar absolute top-0 -left-96 h-screen overflow-y-auto bg-white z-50 transition-all duration-500">
+        <ul class="side-menu w-72 font-medium">
+          <li class="relative border-b-2"><input type="search" placeholder="Search for products"
+              class="pr-28 py-4 text-xs outline-none pl-4"><i
+              class='bx bx-search-alt-2 text-2xl text-gray-400 absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer'></i>
+          </li>
+
+          <li class="flex justify-between"><span
+              class="js-menu-span text-sm text-center w-full cursor-pointer py-4 bg-neutral-200 relative before:w-full before:h-0.5 before:bg-lime-600 before:absolute before:bottom-0 before:right-0 
+              before:transition-all before:duration-300 hover:before:w-full hover:before:transition-all hover:before:duration-300" onclick="switchMenues(this,'.js-category-span','.js-menu-content','.js-category-content')">MENU</span>
+            <span
+              class="js-category-span text-sm w-full text-center cursor-pointer py-4 bg-neutral-100 text-neutral-500 hover:text-black relative before:w-0 before:h-0.5 before:bg-lime-600 before:absolute before:bottom-0 before:left-0 before:transition-all before:duration-300 hover:before:w-full hover:before:transition-all hover:before:duration-300" onclick="switchMenues(this,'.js-menu-span','.js-category-content','.js-menu-content')">CATEGORIES</span>
+          </li>
+          <div class="relative">
+            <ul class="js-category-content absolute left-0 top-0 w-full opacity-0 transition-all duration-1000">
+              <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block">FURNITURE</a></li>
+              <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block">LIGHTING</a></li>
+              <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block">ACCESSORIES</a></li>
+              <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block">CLOCKS</a></li>
+              <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block">COOKING</a></li>
+              <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block">ELECTRONICS</a></li>
+              <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block">MINIMALISM</a></li>
+              <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block">FASHION</a></li>
+              <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block">TOYS</a></li>
+              </ul>
+            <ul class="js-menu-content absolute left-0 top-0 w-full transition-all duration-1000">
+              <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block">HOME</a></li>
+              <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block">DEMOS</a></li>
+              <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block">SHOP</a></li>
+              <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block">BLOG</a></li>
+              <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block">PORTFOLIO</a></li>
+              <li class="pl-2 border-b-2 flex justify-between items-center"><a href="#"
+                  class="w-full inline-block">PAGES</a><i
+                  class='bx bx-chevron-right block text-xl border-2 py-2 px-4 cursor-pointer'
+                  onclick="dropdown(this,'.js-sub-pages')"></i></li>
+              <ul class="js-sub-pages max-h-0 overflow-hidden transition-{max-height} duration-1000  text-neutral-500">
+                <li class="pl-2 border-b-2 flex justify-between items-center "><a href="#"
+                    class="w-full inline-block hover:text-lime-600">Pre-Built Pages</a><i
+                    class='bx bx-chevron-right block text-xl border-2 py-2 px-4 cursor-pointer'
+                    onclick="dropdown(this,'.js-sub-pre-built-pages')"></i></li>
+                <ul class="js-sub-pre-built-pages max-h-0 overflow-hidden transition-{max-height} duration-1000">
+                  <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block hover:text-lime-600">Contact
+                      Us</a></li>
+                  <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block hover:text-lime-600">Contact
+                      Us
+                      2</a></li>
+                  <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block hover:text-lime-600">Contact
+                      Us
+                      3</a></li>
+                  <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block hover:text-lime-600">Contact
+                      Us
+                      4</a></li>
+                  <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block hover:text-lime-600">FAQs</a>
+                  </li>
+                  <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block hover:text-lime-600">FAQs2</a>
+                  </li>
+                  <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block hover:text-lime-600">Our
+                      team</a></li>
+                  <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block hover:text-lime-600">About
+                      us</a></li>
+                  <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block hover:text-lime-600">About us
+                      2</a></li>
+                </ul>
+                <li class="pl-2 border-b-2 flex justify-between items-center"><a href="#"
+                    class="w-full inline-block hover:text-lime-600">Pre-Built Layouts</a><i
+                    class='bx bx-chevron-right block text-xl border-2 py-2 px-4 cursor-pointer'
+                    onclick="dropdown(this,'.js-sub-pre-built-layers')"></i></li>
+                <ul class="js-sub-pre-built-layers max-h-0 overflow-hidden transition-{max-height} duration-1000">
+                  <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block hover:text-lime-600">Layout
+                      Basic</a></li>
+                  <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block hover:text-lime-600">Layout
+                      Boxed</a></li>
+                  <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block hover:text-lime-600">Layout
+                      Categories</a></li>
+                  <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block hover:text-lime-600">Layout
+                      Digital Portfolio</a></li>
+                  <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block hover:text-lime-600">Layout
+                      Fullscreen</a></li>
+                  <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block hover:text-lime-600">Layout
+                      Grid</a></li>
+                  <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block hover:text-lime-600">Layout
+                      Infinite Scrolling</a></li>
+                  <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block hover:text-lime-600">Layout
+                      Landing</a></li>
+                  <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block hover:text-lime-600">Layout
+                      Lookbook</a></li>
+                  <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block hover:text-lime-600">Layout
+                      Parallax</a></li>
+                  <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block hover:text-lime-600">Layout
+                      Video</a></li>
+                </ul>
+              </ul>
+              <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block">WISHLIST</a></li>
+              <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block">COMPARE</a></li>
+              <li class="pl-2 py-3 border-b-2"><a href="#" class="w-full inline-block">LOGIN/REGISTER</a></li>
+            </ul>
+          </div>
+        </ul>
+      </nav>
+    </section>
+  </header>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
